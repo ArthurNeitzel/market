@@ -29,5 +29,5 @@ Este projeto foi desenvolvido utilizando a arquitetura Spring e conta com vário
 
 Para rodar o projeto utilize do comando do gradle:
 
-gradle bootRun.
+    $ gradle bootRun
 
