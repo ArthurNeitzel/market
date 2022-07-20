@@ -1,0 +1,33 @@
+CREATE TABLE IF NOT EXISTS CLIENTE (
+  id SERIAL NOT NULL,
+  nome varchar(250) NOT NULL,
+  cpf varchar(11) NOT NULL,
+  data_nascimento DATE NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS PRODUTO (
+  id SERIAL NOT NULL,
+  nome varchar(250) NOT NULL,
+  descricao varchar(250) NOT NULL,
+  preco NUMERIC NOT NULL,
+  quantidade INT NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS PEDIDO (
+  id SERIAL NOT NULL,
+  id_cliente SERIAL,
+  total NUMERIC NOT NULL,
+  data DATE NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (id_cliente) REFERENCES CLIENTE(id)
+);
+
+CREATE TABLE IF NOT EXISTS PRODUTO_PEDIDO (
+  id_produto SERIAL NOT NULL,
+  id_pedido SERIAL NOT NULL,
+  PRIMARY KEY (id_produto, id_pedido),
+  FOREIGN KEY (id_produto) REFERENCES PRODUTO(id) ON UPDATE CASCADE,
+  FOREIGN KEY (id_pedido) REFERENCES PEDIDO(id) ON UPDATE CASCADE
+);
