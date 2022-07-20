@@ -16,7 +16,7 @@ Para montar o ambiente do projeto é necessário:
 ## Containers Dockers 
 
 O primeiro passo a ser realizado é a configuração dos containers dockers do projeto.
-Para isso é necessário executar o comando abaixo na pasta **/banco** na raíz do projeto.
+Para isso é necessário executar o comando abaixo na raíz do projeto.
 
     $ docker-compose up
 
